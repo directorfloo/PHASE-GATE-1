@@ -1,10 +1,11 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-public class Grocery {
+public class GroceryStoreApp {
 public static ArrayList<String> itemList = new ArrayList<>();
 public static void main(String...args){
 Scanner input = new Scanner(System.in);
 boolean mainMenu = true;
+
 while(mainMenu){
    String prompt =("""
 
@@ -19,8 +20,10 @@ while(mainMenu){
 		""");	
 System.out.print(prompt);     	
 System.out.print("Enter choice 1, 2, 3 or 0 to quit: ");
-int choice = input.nextInt();
-switch(choice) {
+int option = input.nextInt();
+input.nextLine();
+
+switch(option) {
 	case 1: System.out.print("1. Add items: ");
                 String userInput = input.nextLine();
                 Grocery.addMyItem(userInput);
@@ -61,4 +64,5 @@ System.out.println(itemList.get(index));
 
 }
 }
+
 }
